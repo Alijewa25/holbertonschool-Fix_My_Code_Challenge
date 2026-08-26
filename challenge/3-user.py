@@ -40,7 +40,6 @@ class User():
         if pwd is None or type(pwd) is not str:
             self.__password = None
         else:
-            # _password əvəzinə __password yazıldı və .lower() saxlanıldı
             self.__password = hashlib.md5(pwd.encode()).hexdigest().lower()
 
     def is_valid_password(self, pwd):
@@ -55,7 +54,6 @@ class User():
             return False
         if self.__password is None:
             return False
-        # .upper() əvəzinə .lower() yazıldı
         return hashlib.md5(pwd.encode()).hexdigest().lower() == self.__password
 
 
